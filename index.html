@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Raleway";
+            background-color: rgb(247, 245, 245);
+        }
+        .container{
+            max-width: 1600px;
+            margin: auto;
+        }
+        @keyframes animation{
+            0%{left: 0;}
+        
+            100%{left: 150px;}
+        }
+        @keyframes animation1{
+            0%{opacity: 0.2;}
+        
+            100%{opacity: 1;}
+        }
+        .left{
+            position: fixed;
+            width: 300px;
+            background-color: white;
+            height: 100%;
+            padding: 20px 0;
+            z-index: 2;
+            animation: animation 1s;
+        }
+        .left img{
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            margin-left: 20px;
+          
+        }
+        .left h1{
+            font-size: 20px;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .left p{
+            color: gray;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        .menu a{
+            display: block;
+            padding: 10px 0px;
+            text-decoration: none;
+            color: black; 
+            padding-left: 20px;
+        }
+        .menu a:hover{
+            background-color: lightgray;
+        }
+        .menu i{
+            margin-right: 20px;
+        }
+        #menucolor{
+            color:rgb(5, 131, 103);
+        }
+        .link{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .link a{
+            display:  inline-block;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .link a:hover{
+            color: lightgray;
+        }
+        .right{
+            padding: 20px 0 0;
+            margin-left: 300px;
+            background-color: rgba(211 , 211, 211, 0.3);
+        }
+        .right h1{
+            font-size: 40px;
+            margin-top: 0;
+            margin-left: 20px;
+        }
+        .nav{
+            margin-left: 20px;
+        }
+        .nav-link{
+            display: inline;
+            margin-left: 10px;
+            
+        }
+        .nav a{
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .nav a:hover{
+            background-color: lightgray;
+        }
+        .nav i{
+            margin-right: 10px;
+        }
+        #all{
+            background-color: black;
+            color: white;
+        }
+        #all:hover  {
+            background-color: lightgray;
+            color: black;
+        }
+        #hr{
+            background-color: lightgray;
+            height: 6px;
+            border: none;
+            margin: 15px 20px;
+        }
+        .photo{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            row-gap: 20px;
+            padding: 0 20px;
+        }
+        .photo-item{        
+           background-color: white;
+        }
+        .photo-item img{
+            width: 100%;
+            height: auto;
+        }
+        .photo-item h2{
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .photo-item p{
+            font-size: 15px;
+            line-height: 22px;
+            margin-left: 10px;
+        }
+        .pagination{
+            text-align: center;
+            margin: 40px 0;
+        }
+        .pagination a{
+            text-decoration: none;
+            color: black;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        .pagination a:hover{
+            background-color: black;
+            color: white;
+            
+        }
+        .img{
+            display: flex;
+            column-gap: 20px;
+            padding: 0 20px;
+        }
+        .img img{
+            flex: 1;
+            width: 100%;
+            height: auto;
+        }
+        .about{
+            padding: 30px 20px;
+        }
+        .about h1{
+            font-size: 20px;
+            margin-left: 0;
+        }
+        .about p{
+            font-size: 13px;
+            letter-spacing: 1px;
+            line-height: 20px;
+        }
+        .skill{
+            margin-top: 30px;
+        }
+        .skill h2{
+            font-size: 20px;
+        }
+        .photography p{
+            font-size: 15px;
+        }
+        button{
+            height: 30px;
+            border: none;
+            color: white;
+        }
+        .photography-left{
+            width: 95%;
+            background-color: rgb(80, 80, 80);
+            float: left;
+        }
+        .photography-right{
+            float: left;
+            width: 5%;
+            background-color: lightgray;
+        }
+        .design-left{
+            width: 85%;
+            background-color: rgb(80, 80, 80);
+            float: left;
+        }
+        .design-right{
+            float: left;
+            width: 15%;
+            background-color: lightgray;
+        }
+        .photoshop-left{
+            width: 80%;
+            background-color: rgb(80, 80, 80);
+            float: left;
+        }
+        .photoshop-right{
+            float: left;
+            width: 20%;
+            background-color: lightgray;
+        }
+        .skill::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .download{
+           margin-top: 20px;
+        }
+        .download a{
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: rgb(80, 80, 80);
+            padding: 15px 15px;
+            font-size: 14px;
+        }
+        .download a:hover{
+            color: black;
+            background-color: lightgray;
+        }
+        .download i{
+            margin: 0 10px;
+        }
+        .charge{
+            margin-top: 40px;
+        }
+        .charge h2{
+            font-size: 20px;
+        }
+        .charge-content{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            column-gap: 15px;
+        }
+        .charge-content-item{
+            text-align: center;
+            border: 1px solid lightgray;
+            opacity: 0.6;
+        }
+        .charge-content-item:hover{
+            opacity: 1;
+        }
+        .charge-content-item p{
+            font-size: 15px;
+            border-bottom: 1px solid lightgray;
+            line-height: 30px;
+            height: 40px;
+        }
+        .charge-content-item h3{
+            background-color: black;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .charge-content-item a{
+            text-decoration: none;
+            color: white;
+            background-color: rgb(5, 131, 103);
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .charge-content-item a:hover{
+            color: white;
+            background-color: black;
+        }
+        .contact{
+            margin-top: 30px;
+            padding: 30px 20px;
+            background-color: rgb(153, 151, 151);
+        }
+        .contact-text{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        .contact-text-item{
+            text-align: center;
+            background-color: rgb(87, 86, 86);
+        }
+        .contact-text-item i{
+            display: block;
+            margin-top: 10px;
+            font-size: 35px;
+            color: white;
+        }
+        .contact-text-item p{
+            color: white;
+            font-size: 15px;
+        } 
+        #chicago{
+            background-color: rgb(5, 131, 103);
+        }
+        .contact hr{
+            padding: 10px 0;
+        } 
+        .input{
+            margin-top: 20px;
+        } 
+        .input label{
+            display: block;
+            font-size: 15px;
+        }
+        .input input{
+            display: block;
+            width: 100%;
+            height: 35px;
+            margin-bottom: 15px;
+        }
+        .contact a{
+            color: white;
+            background-color: black;
+            padding: 10px 10px;
+            text-decoration: none;
+            font-size: 15px;
+            display: inline-block;
+        }
+        .contact a:hover{
+            background-color: lightgray;
+            color: black;
+        }
+        .contact i{
+            margin-right: 10px;
+        }
+        .top{
+            position: relative;
+          
+            display: none;
+            background-color:  rgba(211 , 211, 211, 0.3);
+        }
+        .top-left{
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+       
+        }
+        .top-right{
+            float: right;
+         
+        }
+        .top-right img{
+            margin-top: 10px;
+            margin-right: 20px;
+            width: 55px;
+            border-radius: 50%;
+            height: 55px;
+           
+        }
+        #close{
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: black;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+        #close:hover{
+            background-color: gray;
+            color: black;
+        }
+        @media only screen and (max-width:1000px){
+            .top{
+                display: block;
+            }
+            .left{
+                display: none;
+                animation: animation1 1s;
+            }
+            .right{
+                margin-left: 0;
+                padding-top: 80px;
+            }
+           
+        }
+        @media only screen and (max-width:600px){
+            .top{
+                display: block;
+            }
+            .left{
+                display: none;
+            }
+            .right{
+                margin-left: 0;
+                padding-top: 80px;
+            }
+            .right .photo{
+                grid-template-columns: auto;
+            }
+            .img{
+                flex-direction: column;
+            }
+            .charge-content{
+                grid-template-columns: auto;
+                row-gap: 10px;
+            }
+            .contact-text{
+                grid-template-columns: auto;
+            }
+            #filter{
+                display:  none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <a class="top-left" href="javascript:showmenu();"><i class="fa fa-bars"></i></a>
+            <script>
+                function showmenu(){
+                    let index=0;
+                    if (index%2==0){
+                        let a=document.getElementById("left");
+                        a.style.display="block";
+                        let c=document.getElementById("close");
+                        c.style.display="block";
+                        let b=document.getElementById("right");
+                        b.style.opacity=0.6;   
+                        index++;
+                    }   
+                }
+            </script>
+            <a class="top-right" href=""><img src="avatar_g.jpg" alt=""></a>
+        </div>
+        <div class="left" id="left">
+            <img src="avatar_g2.jpg" alt="">
+            <h1>PORTFOLIO</h1>
+            <p>Template by W3.CSS</p>
+            <div class="menu">
+                <a href="" id="menucolor"><i class="fa fa-th-large"></i>PORTFOLIO</a>
+                <a href="#about"><i class="fa fa-user"></i>ABOUT</a>
+                <a href="#contact"><i class="fa fa-envelope"></i>CONTACT</a>
+            </div>
+            
+            <div class="link">
+                <a href=""><i class="fa fa-facebook-official"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-snapchat"></i></a>
+                <a href=""><i class="fa fa-pinterest"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+            <a href="" id="close">Close</a>
+        </div>
+        <div class="right" id="right">
+            <h1>My Portfolio</h1>
+            <div class="nav">
+                <span>Filter:</span>
+                <div class="nav-link">
+                    <a id="all" href="">ALL</a>
+                    <a href=""><i class="fa fa-diamond"></i>Design</a>
+                    <a href="" id="filter"><i class="fa fa-photo"></i>Photos</a>
+                    <a href="" id="filter"><i class="fa fa-map-pin"></i>Art</a>
+                </div>  
+            </div>
+            <hr id="hr">
+            <div class="photo">
+                <div class="photo-item">
+                    <img src="mountains.jpg" alt="">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
+                <div class="photo-item">
+                    <img src="lights.jpg" alt="">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
+                <div class="photo-item">
+                    <img src="nature.jpg" alt="">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
+                <div class="photo-item">
+                    <img src="p1.jpg" alt="">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
+                <div class="photo-item">
+                    <img src="p2.jpg" alt="">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
+                <div class="photo-item">
+                    <img src="p3.jpg" alt="">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href=""><<</a>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">>></a>
+            </div>
+            <div class="img">
+                <img src="avatar_g.jpg" alt="">
+                <img src="me2.jpg" alt="">
+            </div>
+            <div class="about" id="about">
+                <h1>About Me</h1>
+                <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                <div class="skill">
+                    <h2>Technical Skills</h2>
+                    <div class="photography">
+                        <p>Photography</p>
+                        <button class="photography-left">95%</button>
+                        <button class="photography-right"></button>
+                    </div>
+                    <div class="design">
+                        <p>Photography</p>
+                        <button class="design-left">85%</button>
+                        <button class="design-right"></button>
+                    </div>
+                    <div class="photoshop">
+                        <p>Photography</p>
+                        <button class="photoshop-left">80%</button>
+                        <button class="photoshop-right"></button>
+                    </div>
+                </div>
+                <div class="download">
+                    <a href=""><i class="fa fa-download"></i>Download Resume</a>
+                </div>
+                <div class="charge">
+                    <h2>How much I charge</h2>
+                    <div class="charge-content">
+                        <div class="charge-content-item">
+                            <h3>Basic</h3>
+                            <p>Web Design</p>
+                            <p>Photography</p>
+                            <p>1GB Storage</p>
+                            <p>Mail Support</p>
+                            <h1>$ 10</h1>
+                            <p>per month</p>
+                            <a href="">Sign Up</a>
+                        </div>
+                        <div class="charge-content-item">
+                            <h3>Pro</h3>
+                            <p>Web Design</p>
+                            <p>Photography</p>
+                            <p>50GB Storage</p>
+                            <p>Endless Support</p>
+                            <h1>$ 25</h1>
+                            <p>per month</p>
+                            <a href="">Sign Up</a>
+                        </div>
+                        <div class="charge-content-item">
+                            <h3>Premium</h3>
+                            <p>Web Design</p>
+                            <p>Photography</p>
+                            <p>Unlimited Storage</p>
+                            <p>Endless Support</p>
+                            <h1>$ 25</h1>
+                            <p>per month</p>
+                            <a href="">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact" id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-text">
+                    <div class="contact-text-item">
+                        <i class="fa fa-envelope"></i>
+                        <p>email@email.com</p>
+                    </div>
+                    <div class="contact-text-item" id="chicago">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Chicago, US</p>
+                    </div>
+                    <div class="contact-text-item">
+                        <i class="fa fa-phone"></i>
+                        <p>512312311</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="input">
+                    <label for="">Name</label>
+                    <input type="text">
+                    <label for="">Email</label>
+                    <input type="text">
+                    <label for="">Message</label>
+                    <input type="text">
+                </div>
+                <a href=""> <i class="fa fa-paper-plane"></i>Send Message</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
